@@ -20,6 +20,9 @@
   --white-color: #fff;
   --black-color: #000;
 }
+body {
+  background-color: var(--tertiary-7-color);
+}
 .h1 {
   font-size: 3rem;
   font-weight: 900;
@@ -39,9 +42,6 @@
 .h5 {
   font-size: 1.2rem;
   font-weight: 500;
-}
-body {
-  background-color: var(--tertiary-7-color);
 }
 /* CSS For Header Section */
 .header-section {
@@ -229,7 +229,7 @@ nav {
 .none-active {
   display: none;
 }
-/* Media Query For Text-wrapper */
+/* Media Query For Text-wrapper and other in header section */
 @media (max-width: 500px) {
   .custom-course-bar {
     display: none;
@@ -294,7 +294,6 @@ nav {
     display: none;
   }
 }
-
 /* CSS For Intention Section */
 .intention-section {
   width: 100%;
@@ -410,8 +409,8 @@ nav {
   height: auto;
   background-color: var(--primary-color);
 }
-/* CSS For About Us */
-/* About header monastery */
+/* For About Us Tab */
+/* CSS For About Header Monastery */
 .about-header-monastery {
   background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
     url(/image_folder/view.jpg);
@@ -421,13 +420,13 @@ nav {
 .card-body {
   color: var(--tertiary-2-color) !important;
 }
-/* high-monk-section */
+/* High Monk Section */
 .high-monks-section {
   width: 100%;
   height: auto;
   padding: 100px 0;
 }
-/* CSS for swipper css */
+/* CSS For Swipper */
 .card-wrapper {
   margin: 0 60px 35px;
   padding: 20px 10px;
@@ -480,7 +479,6 @@ nav {
   opacity: 0.5;
   background: var(--tertiary-1-color);
 }
-
 .card-wrapper .swiper-pagination-bullet-active {
   opacity: 1;
 }
@@ -500,7 +498,7 @@ nav {
     margin-bottom: 20px;
   }
 }
-/* Current Ven Section  */
+/* CSS For Current Ven Section  */
 .current-ven-section {
   width: 100%;
   height: auto;
@@ -516,13 +514,14 @@ nav {
 .accordion-body {
   color: var(--tertiary-2-color) !important;
 }
-/* about header course */
+/* For About Us Tab */
+/* CSS For About Header Course */
 .about-header-course {
   background-image: linear-gradient(
       rgba(4, 9, 30, 0.845),
       rgba(4, 9, 30, 0.845)
     ),
-    url(/image_folder/computer8.jpg);
+    url(/image_folder/eng3.jpg);
   background-position: center;
   background-size: cover;
 }
@@ -535,7 +534,7 @@ nav {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-/* About Section */
+/* CSS For About Section */
 .about-section {
   width: 100%;
   height: auto;
@@ -558,8 +557,7 @@ nav {
     height: 500px;
   }
 }
-
-/* More Info Section */
+/* CSS For More Info Section */
 .more-info-section {
   width: 100%;
   height: auto;
@@ -576,7 +574,7 @@ nav {
   font-size: 40px;
   color: var(--tertiary-1-color);
 }
-/* Bridging Section */
+/* CSS For Bridging Section */
 .bridging-section {
   width: 100%;
   height: auto;
@@ -585,8 +583,8 @@ nav {
 .section-title {
   color: var(--tertiary-1-color) !important;
 }
-/* CSS For Program */
-/* Contact Header */
+/* For Program Tab */
+/* CSS For Contact Header */
 .program-header {
   background-image: linear-gradient(
       rgba(4, 9, 30, 0.845),
@@ -596,7 +594,7 @@ nav {
   background-position: top;
   background-size: cover;
 }
-/* Course Content Section */
+/* CSS For Course Content Section */
 .course-content-section {
   width: 100%;
   height: auto;
@@ -624,7 +622,8 @@ nav {
 .border-line {
   border-bottom: 1px solid var(--secondary-color);
 }
-/* CSS For Contact */
+/* For Contact Tab */
+/* CSS For Contact Header */
 .contact-header {
   background-image: linear-gradient(
       rgba(4, 9, 30, 0.845),
@@ -634,7 +633,7 @@ nav {
   background-position: center;
   background-size: cover;
 }
-/* Reach Out Section */
+/* CSS For Reach Out Section */
 .reach-out-section {
   width: 100%;
   height: auto;
@@ -655,12 +654,13 @@ nav {
   border-radius: 50%;
   border: 1px solid var(--tertiary-2-color);
 }
-/* Map and Form Section */
+/* CSS For Map and Form Section */
 .map-and-form-section {
   width: 100%;
   height: auto;
   padding: 100px 0;
 }
+/* Media Query For Form and other */
 @media (max-width: 500px) {
   .form-label {
     font-size: 14px;
