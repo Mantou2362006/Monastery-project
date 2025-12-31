@@ -1,0 +1,672 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #f9e400;
+  --secondary-color: #7c00fe;
+  --accent-color: #480095;
+  --tertiary-1-color: #ffaf00;
+  --tertiary-2-color: #1a237e;
+  --tertiary-3-color: #ffae0042;
+  --tertiary-4-color: #cbcbcb;
+  --tertiary-5-color: rgba(4, 9, 30, 0.7);
+  --tertiary-6-color: #dfc1ffb6;
+  --tertiary-7-color: #232223;
+  --tertiary-8-color: #1a227e6e;
+  --white-color: #fff;
+  --black-color: #000;
+}
+.h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+.h3 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.h5 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+body {
+  background-color: var(--tertiary-7-color);
+}
+/* CSS For Header Section */
+.header-section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+nav {
+  background-color: var(--primary-color);
+}
+.logo-img {
+  width: 65px;
+  height: auto;
+}
+.nav-link {
+  color: var(--tertiary-2-color) !important;
+  font-weight: 500;
+}
+.nav-link:hover {
+  color: var(--tertiary-7-color) !important;
+}
+.nav-item {
+  width: fit-content;
+  margin: 0 auto;
+}
+.nav-item::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: var(--tertiary-7-color);
+  display: block;
+  margin: auto;
+  transition: 0.4s;
+}
+.nav-item:hover::after {
+  width: 100%;
+}
+.nav-item.active::after {
+  width: 100%;
+}
+.nav-item.active .nav-link {
+  color: var(--tertiary-7-color) !important;
+}
+.menu-width {
+  width: fit-content;
+  background-color: var(--tertiary-2-color);
+}
+.dropdown-item {
+  color: var(--tertiary-1-color) !important;
+}
+.dropdown-item:hover {
+  background-color: var(--tertiary-1-color);
+  color: var(--tertiary-2-color) !important;
+}
+/* CSS For Slider */
+.slide-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.slides {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+}
+.slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slides.active {
+  opacity: 1;
+  z-index: 2;
+}
+.slides::after {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(4, 9, 30, 0.845);
+}
+.indicator-container {
+  width: 80%;
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 10;
+}
+.indicator-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.fill {
+  height: 100%;
+  width: 0%;
+  background-color: var(--primary-color);
+}
+.active-bar .fill {
+  width: 100%;
+  transition: width 4s linear;
+}
+.num {
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+/* CSS For Text-box */
+.text-box-wrapper {
+  width: 80%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  text-align: center;
+}
+.text-box-title {
+  color: var(--tertiary-1-color);
+}
+.navbar {
+  z-index: 1000 !important;
+}
+.display-5 {
+  font-size: 3rem;
+}
+/* CSS For custom course bar */
+.custom-course-bar {
+  padding: 30px;
+  background-color: var(--white-color);
+  border-radius: 30px;
+}
+.course-column {
+  display: flex;
+  align-items: center;
+  gap: 10px !important;
+}
+.circle-border {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--tertiary-1-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: var(--tertiary-1-color);
+}
+.hero-btn {
+  padding: 8px 16px;
+  text-decoration: none;
+  background-color: var(--tertiary-1-color);
+  color: var(--tertiary-2-color);
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: 0.4s;
+}
+.hero-btn:hover {
+  background-color: var(--tertiary-2-color);
+  color: var(--tertiary-1-color);
+}
+.none-active {
+  display: none;
+}
+/* Media Query For Text-wrapper */
+@media (max-width: 500px) {
+  .custom-course-bar {
+    display: none;
+  }
+  .text-box-title {
+    font-size: 1.7rem !important;
+  }
+  .text-box-description {
+    display: none;
+  }
+  .none-active {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .text-box-wrapper {
+    top: 60%;
+  }
+  .text-box-title {
+    font-size: 2rem !important;
+  }
+  .custom-course-bar {
+    padding: 20px;
+  }
+  .circle-border {
+    width: 50px;
+    height: 50px;
+  }
+  .fa-solid {
+    font-size: 25px;
+  }
+  .description-title {
+    font-size: 16px !important;
+  }
+  .h1 {
+    font-size: 2.1rem !important;
+  }
+  .h2 {
+    font-size: 1.9rem !important;
+  }
+  .h3 {
+    font-size: 1.5rem !important;
+  }
+  .h4 {
+    font-size: 1.3rem !important;
+  }
+  .h5 {
+    font-size: 1rem !important;
+  }
+  .fs-5 {
+    font-size: 1rem !important;
+  }
+}
+@media (max-width: 992px) {
+  .text-box-wrapper {
+    top: 60%;
+  }
+  .text-box-title {
+    font-size: 2rem;
+  }
+  .indicator-container {
+    display: none;
+  }
+}
+
+/* CSS For Intention Section */
+.intention-section {
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+}
+.separator-line {
+  border-bottom: 1px solid var(--white-color);
+}
+.section-column {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background-color: var(--white-color);
+}
+.section-column .fa-solid {
+  font-size: 50px;
+  color: var(--tertiary-1-color);
+}
+/* CSS For About Section */
+.about-intro-section {
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+}
+.about-intro-card {
+  background-color: var(--tertiary-4-color);
+}
+.about-icon-background {
+  background-color: var(--tertiary-3-color);
+  width: fit-content;
+  border-radius: 20px;
+}
+.about-icon-background .fa-solid {
+  color: #ffaf00;
+  font-size: 40px;
+}
+.about-intro-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.card-btn {
+  padding: 8px 20px;
+  text-decoration: none;
+  background-color: var(--tertiary-2-color);
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: 0.4s;
+  border-radius: 10px;
+}
+.card-btn:hover {
+  background-color: var(--tertiary-1-color);
+  color: var(--tertiary-2-color);
+}
+/* CSS For Program Intro Section */
+.program-intro-section {
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+}
+.card {
+  width: 100%;
+  height: 100%;
+}
+.program-intro-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right;
+}
+.program-icon-background {
+  width: fit-content;
+  border-radius: 20px;
+  background-color: #32cd3242;
+}
+.program-icon-background .fa-solid {
+  color: #32cd32;
+  font-size: 40px;
+}
+/* CSS For Contact Intro Section */
+.contact-intro-section {
+  width: 100%;
+  height: 50vh;
+  padding: 100px 0;
+  background-image: linear-gradient(#ffae00c5), url(/image_folder/banner9.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+.contact-intro-title,
+.contact-intro-text {
+  color: var(--tertiary-2-color);
+}
+.contact-intro-btn {
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: var(--tertiary-2-color);
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: 0.4s;
+  border-radius: 10px;
+}
+.contact-intro-btn:hover {
+  background-color: var(--tertiary-4-color);
+  color: var(--tertiary-2-color);
+}
+.footer-section {
+  width: 100%;
+  height: auto;
+  background-color: var(--primary-color);
+}
+/* CSS For About Us */
+/* About header monastery */
+.about-header-monastery {
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(/image_folder/view.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.card-body {
+  color: var(--tertiary-2-color) !important;
+}
+/* high-monk-section */
+.high-monks-section {
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+}
+/* CSS for swipper css */
+.card-wrapper {
+  margin: 0 60px 35px;
+  padding: 20px 10px;
+  overflow: hidden;
+}
+.card-list .card-item {
+  list-style: none;
+}
+.card-list .card-item .card-content {
+  user-select: none;
+  /* width: 400px; */
+  display: block;
+  background: var(--white-color);
+  padding: 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 3px solid transparent;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+.card-list .card-item .card-content:active {
+  cursor: grabbing;
+}
+.card-list .card-item .card-content:hover {
+  border-color: var(--tertiary-1-color);
+}
+.card-list .card-content .card-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+  display: block;
+}
+.card-list .card-content .badge {
+  color: var(--tertiary-2-color);
+  padding: 8px 16px;
+  margin: 16px 0 18px;
+  background: var(--tertiary-8-color);
+  width: fit-content;
+  border-radius: 50px;
+}
+.card-list .card-content .text-description {
+  color: var(--tertiary-2-color);
+  font-size: 17px;
+}
+.card-wrapper .swiper-pagination-bullet {
+  height: 13px;
+  width: 13px;
+  opacity: 0.5;
+  background: var(--tertiary-1-color);
+}
+
+.card-wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+/* Media Query for About-Us (Monastery) */
+@media (max-width: 768px) {
+  .card-wrapper {
+    margin: 0px 10px 25px;
+  }
+  .card-wrapper .swiper-slide-button {
+    display: none;
+  }
+  .card-img {
+    height: 600px !important;
+    object-position: center;
+  }
+  .card-list {
+    margin-bottom: 20px;
+  }
+}
+/* Current Ven Section  */
+.current-ven-section {
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+}
+.accordion {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(0, 0, 0, 0.125);
+}
+.accordion-body {
+  color: var(--tertiary-2-color) !important;
+}
+/* about header course */
+.about-header-course {
+  background-image: linear-gradient(
+      rgba(4, 9, 30, 0.845),
+      rgba(4, 9, 30, 0.845)
+    ),
+    url(/image_folder/computer8.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.about-wrapper-text {
+  width: 80%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+/* About Section */
+.about-section {
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+}
+.card-background {
+  background-color: var(--tertiary-4-color);
+}
+.about-card-background {
+  background-color: var(--tertiary-4-color);
+  color: var(--tertiary-1-color);
+}
+.about-card-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+@media (max-width: 992px) {
+  .about-card-img {
+    height: 500px;
+  }
+}
+
+/* More Info Section */
+.more-info-section {
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+}
+.info-card-background {
+  background-color: var(--tertiary-4-color);
+}
+.icon-background {
+  background-color: var(--tertiary-8-color);
+  width: fit-content;
+}
+.icon-background .fa-solid {
+  font-size: 40px;
+  color: var(--tertiary-1-color);
+}
+/* Bridging Section */
+.bridging-section {
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+}
+.section-title {
+  color: var(--tertiary-1-color) !important;
+}
+/* CSS For Program */
+/* Contact Header */
+.program-header {
+  background-image: linear-gradient(
+      rgba(4, 9, 30, 0.845),
+      rgba(4, 9, 30, 0.845)
+    ),
+    url(/image_folder/eng8.jpg);
+  background-position: top;
+  background-size: cover;
+}
+/* Course Content Section */
+.course-content-section {
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+  background-color: #232223;
+}
+.card-bg-color {
+  background-color: #cbcbcb;
+}
+.program-card-img {
+  height: 100%;
+  object-fit: cover;
+}
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.fa-star-of-life {
+  font-size: 10px;
+}
+.content-text {
+  color: var(--secondary-color);
+}
+.border-line {
+  border-bottom: 1px solid var(--secondary-color);
+}
+/* CSS For Contact */
+.contact-header {
+  background-image: linear-gradient(
+      rgba(4, 9, 30, 0.845),
+      rgba(4, 9, 30, 0.845)
+    ),
+    url(/image_folder/about-banner.jpg);
+  background-position: center;
+  background-size: cover;
+}
+/* Reach Out Section */
+.reach-out-section {
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+  background-color: var(--tertiary-7-color);
+  border-bottom: 1px solid var(--white-color);
+}
+.reach-out-column {
+  background-color: var(--tertiary-4-color);
+  color: var(--tertiary-2-color) !important;
+}
+.reach-out-column .fa-solid {
+  font-size: 25px;
+}
+.reach-out-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid var(--tertiary-2-color);
+}
+/* Map and Form Section */
+.map-and-form-section {
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+}
+@media (max-width: 500px) {
+  .form-label {
+    font-size: 14px;
+  }
+  .px-5 {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+}
