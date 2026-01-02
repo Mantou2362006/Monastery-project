@@ -18,22 +18,34 @@ function startSlider() {
 
 // Function for nav bar active
 function handleNavbarActive() {
-  const currentLocation = window.location.href;
+  const currentLocation = window.location.pathname;
   const navItems = document.querySelectorAll(".nav-item");
 
   navItems.forEach((item) => {
+    item.classList.remove("active");
     const link = item.querySelector(".nav-link");
-    if (link && link.getAttribute("href") !== "#") {
-      if (currentLocation.includes(link.getAttribute("href"))) {
-        item.classList.add("active");
+
+    if (link) {
+      const href = link.getAttribute("href");
+
+      if (currentLocation === "/" || currentLocation.endsWith("index.html")) {
+        if (href === "index.html" || href === "/") {
+          item.classList.add("active");
+        }
+      } else if (href !== "#") {
+        const cleanHref = href.replace(".html", "");
+        if (currentLocation.includes(cleanHref)) {
+          item.classList.add("active");
+        }
       }
     }
   });
 
-  // If link in dropdown active parent
+  // For dropdown acitve
   const dropdownItems = document.querySelectorAll(".dropdown-item");
   dropdownItems.forEach((dropItem) => {
-    if (currentLocation.includes(dropItem.getAttribute("href"))) {
+    const dropHref = dropItem.getAttribute("href").replace(".html", "");
+    if (currentLocation.includes(dropHref)) {
       const parentNavItem = dropItem.closest(".nav-item.dropdown");
       if (parentNavItem) {
         parentNavItem.classList.add("active");
