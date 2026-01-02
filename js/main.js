@@ -16,44 +16,6 @@ function startSlider() {
   indicators[currentIndex].classList.add("active-bar");
 }
 
-// Function for nav bar active
-function handleNavbarActive() {
-  const currentLocation = window.location.pathname;
-  const navItems = document.querySelectorAll(".nav-item");
-
-  navItems.forEach((item) => {
-    item.classList.remove("active");
-    const link = item.querySelector(".nav-link");
-
-    if (link) {
-      const href = link.getAttribute("href");
-
-      if (currentLocation === "/" || currentLocation.endsWith("index.html")) {
-        if (href === "index.html" || href === "/") {
-          item.classList.add("active");
-        }
-      } else if (href !== "#") {
-        const cleanHref = href.replace(".html", "");
-        if (currentLocation.includes(cleanHref)) {
-          item.classList.add("active");
-        }
-      }
-    }
-  });
-
-  // For dropdown acitve
-  const dropdownItems = document.querySelectorAll(".dropdown-item");
-  dropdownItems.forEach((dropItem) => {
-    const dropHref = dropItem.getAttribute("href").replace(".html", "");
-    if (currentLocation.includes(dropHref)) {
-      const parentNavItem = dropItem.closest(".nav-item.dropdown");
-      if (parentNavItem) {
-        parentNavItem.classList.add("active");
-      }
-    }
-  });
-}
-
 // After page load execute functions
 window.onload = () => {
   // start slider
@@ -61,7 +23,4 @@ window.onload = () => {
     indicators[0].classList.add("active-bar");
     setInterval(startSlider, slideTime);
   }
-
-  // start nav-item active
-  handleNavbarActive();
 };
