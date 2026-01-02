@@ -279,8 +279,11 @@ nav {
   .h5 {
     font-size: 1rem !important;
   }
-  .fs-5 {
+  .fs-4 {
     font-size: 1rem !important;
+  }
+  .fs-5 {
+    font-size: 0.9rem !important;
   }
 }
 @media (max-width: 992px) {
@@ -386,19 +389,6 @@ nav {
   display: flex;
   align-items: center;
 }
-.contact-intro-btn {
-  padding: 10px 20px;
-  text-decoration: none;
-  background-color: var(--tertiary-2-color);
-  color: var(--primary-color);
-  font-weight: 500;
-  transition: 0.4s;
-  border-radius: 10px;
-}
-.contact-intro-btn:hover {
-  background-color: var(--tertiary-4-color);
-  color: var(--tertiary-2-color);
-}
 .footer-section {
   width: 100%;
   height: auto;
@@ -412,21 +402,24 @@ nav {
   background-position: center;
   background-size: cover;
 }
-.about-wrapper-text-monastery {
+.about-wrapper-text {
   width: 65%;
   height: auto;
-  padding: 40px;
+  padding: 30px;
   border-radius: 20px;
   backdrop-filter: blur(2px);
   background: rgba(255, 255, 255, 0.3);
   position: absolute;
-  top: 50%;
+  top: 57%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
 .card-body {
   color: var(--tertiary-2-color) !important;
+}
+.custom-card {
+  background-color: var(--tertiary-4-color);
 }
 /* High Monk Section */
 .high-monks-section {
@@ -444,11 +437,11 @@ nav {
   list-style: none;
 }
 .card-list .card-item .card-content {
+  /* max-height: 500px; */
+  overflow: hidden;
   user-select: none;
-  /* width: 400px; */
   display: block;
   background: var(--white-color);
-  padding: 18px;
   border-radius: 12px;
   text-decoration: none;
   border: 3px solid transparent;
@@ -461,14 +454,14 @@ nav {
 .card-list .card-item .card-content:hover {
   border-color: var(--tertiary-1-color);
 }
-.card-list .card-content .card-img {
+/* .card-list .card-content .card-img {
   width: 100%;
   height: 300px;
   object-fit: cover;
   object-position: top;
   border-radius: 10px;
   display: block;
-}
+} */
 .card-list .card-content .badge {
   color: var(--tertiary-2-color);
   padding: 8px 16px;
@@ -491,16 +484,26 @@ nav {
   opacity: 1;
 }
 /* Media Query for About-Us (Monastery) */
+@media (max-width: 500px) {
+  .about-wrapper-text {
+    width: 80% !important;
+    padding: 10px 10px !important;
+    top: 55%;
+  }
+  .custom-card {
+    padding: 10px !important;
+  }
+}
 @media (max-width: 768px) {
+  .about-wrapper-text {
+    width: 70%;
+    padding: 20px 20px 30px;
+  }
   .card-wrapper {
     margin: 0px 10px 25px;
   }
   .card-wrapper .swiper-slide-button {
     display: none;
-  }
-  .card-img {
-    height: 600px !important;
-    object-position: center;
   }
   .card-list {
     margin-bottom: 20px;
@@ -518,6 +521,10 @@ nav {
 .accordion-button:focus {
   box-shadow: none;
   border-color: rgba(0, 0, 0, 0.125);
+  background: none;
+}
+.accordion-button:not(.collapsed) {
+  background: none;
 }
 .accordion-body {
   color: var(--tertiary-2-color) !important;
@@ -533,23 +540,11 @@ nav {
   background-position: center;
   background-size: cover;
 }
-.about-wrapper-text-course {
-  width: 80%;
-  height: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
 /* CSS For About Section */
 .about-section {
   width: 100%;
   height: auto;
   padding: 60px 0;
-}
-.card-background {
-  background-color: var(--tertiary-4-color);
 }
 .about-card-background {
   background-color: var(--tertiary-4-color);
@@ -571,12 +566,11 @@ nav {
   height: auto;
   padding: 60px 0;
 }
-.info-card-background {
-  background-color: var(--tertiary-4-color);
-}
-.icon-background {
-  background-color: var(--tertiary-8-color);
-  width: fit-content;
+.more-info-section-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .icon-background .fa-solid {
   font-size: 40px;
@@ -590,6 +584,11 @@ nav {
 }
 .section-title {
   color: var(--tertiary-1-color) !important;
+}
+.bridging-section-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 /* For Program Tab */
 /* CSS For Contact Header */
