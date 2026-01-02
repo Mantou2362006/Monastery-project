@@ -313,8 +313,13 @@ nav {
   background-color: var(--white-color);
 }
 .section-column .fa-solid {
+  width: 20%;
   font-size: 50px;
   color: var(--tertiary-1-color);
+}
+.intention-description {
+  width: 80%;
+  height: auto;
 }
 /* CSS For About Section */
 .about-intro-section {
